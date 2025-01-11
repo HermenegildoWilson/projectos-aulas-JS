@@ -1,15 +1,15 @@
-function parImpar(num1) {
+function parImpar(num) {
 
-    if (num1 < 0) {
-        num1 *= -1
+    if (num < 0) {
+        num *= -1
     }
 
-    if (num1 == 0) {
+    if (num == 0) {
         return `É par!`
-    }else if (num1 == 1) {
+    }else if (num == 1) {
         return `É impar!`
     }else {
-        return parImpar(num1 - 2)
+        return parImpar(num - 2)
     }
 }
 
