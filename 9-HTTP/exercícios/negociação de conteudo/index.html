@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requisições</title>
+    <style>
+        div{
+            border: 1px solid black;
+            height: 80vh;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Resultado</h1>
+    <button>Requisitar</button>
+    <div></div>
+    <script>
+        const btn = document.querySelector('button');
+        const output = document.querySelector('div');
+
+        function requisitar(url) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+
+            output.innerHTML = 'Carregando';
+            xhr.onload = () => {
+                output.innerHTML = xhr.responseText;
+            }
+            xhr.onerror = () => {
+                output.innerHTML = xhr.status;
+            }
+            xhr.send();
+        }
+
+        btn.onclick = () => {
+            requisitar('http://eloquentjavascript.net/author')
+        }
+    </script>
+</body>
+
+</html>
