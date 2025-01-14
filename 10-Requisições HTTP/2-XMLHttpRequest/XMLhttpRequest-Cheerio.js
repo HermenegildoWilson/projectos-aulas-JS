@@ -3,13 +3,16 @@ const cheerio = require('cheerio')
 
 let request = new xhr();
 
-request.open('GET', 'https://hermenegildowilson.github.io/exemplo/', false)
+request.open('GET', 'https://angolaapi.herokuapp.com/api/v1/geography/provinces/6032c083c5686966bcc04210', false)
 
 request.send(null)
-const html = request.responseText
+const dadosResposta = request.responseText
+console.log(dadosResposta);
 
-const $ = cheerio.load(html)
+/*
+const $ = cheerio.load(dadosResposta)
 
 $('div').each((index, element) => {
     console.log($(element).text())
 })
+*/
