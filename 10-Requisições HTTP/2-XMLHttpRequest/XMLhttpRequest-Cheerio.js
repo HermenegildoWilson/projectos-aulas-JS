@@ -3,7 +3,7 @@ const cheerio = require('cheerio')
 
 let request = new xhr();
 
-request.open('GET', 'https://angolaapi.herokuapp.com/api/v1/geography/provinces/6032c083c5686966bcc04210', false)
+request.open('GET', 'https://angolaapi.herokuapp.com/api/v1/validate/bi/020411342UE058', false);
 
 request.send(null)
 const dadosResposta = request.responseText
