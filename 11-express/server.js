@@ -1,9 +1,11 @@
 const express = require('express');
-
 const app = express();
-const { router } = require('./routers/users');
 
-app.use(router);
+
+// Importação das rotas, que estão no diretório de rotas
+const router = require('./routers');
+router(app, express);
+
 
 app.listen(3000, (erro) => {
     if (erro) {
