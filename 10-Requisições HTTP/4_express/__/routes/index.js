@@ -1,13 +1,7 @@
-const router = require('express').Router();
-
-const controllers = require('../controllers')
-
-router.get('/', controllers.get);
-router.get('/exercicios/tabuada/:numero', controllers.exerciciosTabuada);
-router.get('/exercicios/soma/:numero1/:numero2', controllers.exerciciosSoma);
+const allRoutes = require('./allRoutes').router;
 
 function start(app) {
-    app.use(router);
+    app.use(allRoutes);
 }
 
 module.exports = { start };

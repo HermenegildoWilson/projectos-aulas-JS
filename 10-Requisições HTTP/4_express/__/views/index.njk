@@ -66,10 +66,11 @@
         div {
             border: 1px solid black;
             border-radius: 10px;
-            padding: 10px
+            padding: 10px;
+            text-align: justify;
         }
-
     </style>
+
 </head>
 
 <body>
@@ -88,10 +89,11 @@
             
         {% endblock %}
     </section>
+
+    {% include "descricao.njk" %}
     
     <footer>
         <p>Por: Hermenegildo Wilson dos Santos Panzo</p>
     </footer>
 </body>
-
 </html>

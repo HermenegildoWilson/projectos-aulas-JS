@@ -1,0 +1,35 @@
+
+{% extends "index.njk" %}
+{% block conteudoMain %}
+    <div id="tabela">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="7">Lista dos usuarios cadastrados</th>
+                </tr>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Sexo</th>
+                    <th>Data de nascimento</th>
+                    <th>Data de cadastro</th>
+                    <th colspan="2">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in users %}
+                    <tr>
+                        <td> {{ u.id }} </td>
+                        <td> {{ u.nome }} </td>
+                        <td> {{ u.sexo }} </td>
+                        <td> {{ u.nascimento.toDateString() }} </td>
+                        <td> {{ u.dataCadastro.toDateString() }} </td>
+                        <td id="editar"> <button style="background:rgba(132, 236, 231, 0.14);"><a href="http://localhost:3000/user/update/{{ u.id }}">Editar</a></button> </td>
+
+                        <td id="excluir"> <button style="background:rgba(236, 144, 132, 0.14);"><a href="http://localhost:3000/user/delete/{{ u.id }}">Deletar</a></button> </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

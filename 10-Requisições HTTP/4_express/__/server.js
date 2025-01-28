@@ -7,6 +7,7 @@ const app = express();
 const router = require('./routes');
 router.start(app);
 
+const conexao = require('../userController/config/dbConection');
 
 // Configuração da template engine
 const nunjucks = require('nunjucks');
